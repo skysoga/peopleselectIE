@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery 弹出层 点击按钮弹出层兼容IE和firefox浏览器</title>
+<link href="style/popup.css" rel="stylesheet" type="text/css" />
+<link href="style/peopleselect.css" rel="stylesheet" type="text/css"  />
+<script src="javascript/jquery-1.9.1.min.js"></script>
+<script src="javascript/reveal-model.js"></script>
+<!--<script src="javascript/people.js"></script>-->
+</head>
+
+<body>
+	<div class="pop-wraper">
+        <div class="search" style="margin:0 auto;width:50%;"> <a href="#" class="Click-block click-block" id="peopleselect" reveal-model-id="showbox"></a>
+        <div class="search-class part-peo_selected clearfix">
+          <ul></ul>
+          <div class="input-label">
+            <input type="text" id="search1" autocomplete="off" style="width:100%;" />
+          </div>
+        </div>
+        <div class="suggestion" > 
+          <ul class="clearfix">
+              <li class="rd_1"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张一</span></a></li>
+          </ul>
+        </div>
+        </div>
+        <div class="box-content" id="showbox">
+            <h2>请选择<a href="#" class="close-reveal-modal">×</a></h2>
+            <div >
+                <div class="modal_wrap">
+                      <div class="serc">
+                        <input onblur="if(value=='') {value='--请输入关键字--';this.style.color='#ccc';}else{this.style.color='#333';}" id="search2" class="search2" onfocus="if(value=='--请输入关键字--') {value='';this.style.color='#333';}" value="--请输入关键字--" name=" " style="color: rgb(153, 153, 153);"  x-webkit-grammar="builtin:translate" x-webkit-speech="" />
+                        <div class="suggestion2">
+                          <ul class="clearfix">
+                            <li class="rd_1 curr"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张二</span></a></li>
+                            <li class="rd_2"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张三</span></a></li>
+                            <li class="rd_3"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张1</span></a></li>
+                            <li class="rd_4"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张四</span></a></li>
+                            <li class="rd_5"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张五</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="infs1">
+                        <b class="add-all add-all-btn right hide">全部添加</b><span class="font-gray">按部门筛选</span>
+                      </div>
+                      <div class="infs">
+                        <span class="look-more hide right" title="展开">展开<i class="more-img"></i></span><span class="clear-all clear-all-btn right" href="">全部清空</span><span class="font-gray">已邀请人员</span>
+                      </div>
+                      <div class="right-list"> 
+                        <ul id="id2" class="clearfix"></ul>
+                      </div>
+                      <div class="peo-select" id="id1">
+                        <ul style="zoom:1;" class="grid-ul">
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>一级配置</div>
+                            <ul class="grid-1 rd endCss">
+                              <li class="rd_1"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张一</span></a></li>
+                              <li class="rd_2"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一二</span></a></li>
+                              <li class="rd_3"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一三</span></a></li>
+                            </ul>
+                            <ul class="grid-1">
+                              <li class="rd_1"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张一</span></a></li>
+                              <li class="rd_2"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一二</span></a></li>
+                              <li class="rd_3"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一三</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>二级配置</div>
+                            <ul class="grid-1">
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2 endCss">
+                                  <li class="rd_4"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张五</span></a></li>
+                                  <li class="rd_5"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张大的</span></a></li>
+                                  <li class="rd_6"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张代发</span></a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2 endCss">
+                                  <li class="rd_4"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张5</span></a></li>
+                                  <li class="rd_5"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张6</span></a></li>
+                                  <li class="rd_6"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张7</span></a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>三级配置</div>
+                            <ul class="grid-1">
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2 ">
+                                  <li>
+                                    <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发部</div>
+                                    <ul class="grid-3 endCss">
+                                      <li class="rd_7"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张8</span></a></li>
+                                      <li class="rd_8"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张9</span></a></li>
+                                      <li class="rd_9"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张10</span></a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>四级配置</div>
+                            <ul class="grid-1">
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2">
+                                  <li>
+                                    <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发部</div>
+                                    <ul class="grid-3">
+                                      <li>
+                                        <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发小组</div>
+                                        <ul class="grid-4 endCss">
+                                          <li class="rd_10"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张11</span></a></li>
+                                          <li class="rd_11"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张12</span></a></li>
+                                          <li class="rd_12"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张13</span></a></li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>       
+                <div class="btn-grop clearfix"> <a class="reveal-button right sure">提交</a> <a class="reveal-button close-reveal-modal right margin-r" aria-label="Close">取消</a> </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="pop-wraper">
+        <div class="search" style="margin:0 auto;width:50%;"> <a href="#" class="Click-block click-block" id="peopleselect1" reveal-model-id="showbox1"></a>
+        <div class="search-class part-peo_selected clearfix">
+          <ul></ul>
+          <div class="input-label">
+            <input type="text" id="search3" autocomplete="off" style="width:100%;" />
+          </div>
+        </div>
+        <div class="suggestion" > 
+          <ul class="clearfix">
+              <li class="rd_1"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张一</span></a></li>
+          </ul>
+        </div>
+        </div>
+        <div class="box-content" id="showbox1">
+            <h2>请选择<a href="#" class="close-reveal-modal">×</a></h2>
+            <div >
+                    <div class="modal_wrap">
+                      <div class="serc">
+                        <input onblur="if(value=='') {value='--请输入关键字--';this.style.color='#ccc';}else{this.style.color='#333';}" id="search4" class="search2" onfocus="if(value=='--请输入关键字--') {value='';this.style.color='#333';}" value="--请输入关键字--" name=" " style="color: rgb(153, 153, 153);"  x-webkit-grammar="builtin:translate" x-webkit-speech="" />
+                        <div class="suggestion2">
+                          <ul class="clearfix">
+                            <li class="rd_1 curr"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张二</span></a></li>
+                            <li class="rd_2"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张三</span></a></li>
+                            <li class="rd_3"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张1</span></a></li>
+                            <li class="rd_4"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张四</span></a></li>
+                            <li class="rd_5"><a><i>添加</i><small>×</small><img src="images/2.png" alt="" /><span>张五</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="infs1">
+                        <b class="add-all add-all-btn right hide">全部添加</b><span class="font-gray">按部门筛选</span>
+                      </div>
+                      <div class="infs">
+                        <span class="look-more hide right" title="展开">展开<i class="more-img"></i></span><span class="clear-all clear-all-btn right" href="">全部清空</span><span class="font-gray">已邀请人员</span>
+                      </div>
+                      <div class="right-list"> 
+                        <ul class="clearfix"></ul>
+                      </div>
+                      <div class="peo-select" id="_id1">
+                        <ul style="zoom:1;" class="grid-ul">
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>一级配置</div>
+                            <ul class="grid-1 rd endCss">
+                              <li class="rd_1"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张一</span></a></li>
+                              <li class="rd_2"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一二</span></a></li>
+                              <li class="rd_3"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一三</span></a></li>
+                            </ul>
+                            <ul class="grid-1">
+                              <li class="rd_1"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张一</span></a></li>
+                              <li class="rd_2"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一二</span></a></li>
+                              <li class="rd_3"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张一三</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>二级配置</div>
+                            <ul class="grid-1">
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2 endCss">
+                                  <li class="rd_4"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张五</span></a></li>
+                                  <li class="rd_5"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张大的</span></a></li>
+                                  <li class="rd_6"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张代发</span></a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2 endCss">
+                                  <li class="rd_4"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张5</span></a></li>
+                                  <li class="rd_5"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张6</span></a></li>
+                                  <li class="rd_6"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张7</span></a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>三级配置</div>
+                            <ul class="grid-1">
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2 ">
+                                  <li>
+                                    <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发部</div>
+                                    <ul class="grid-3 endCss">
+                                      <li class="rd_7"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张8</span></a></li>
+                                      <li class="rd_8"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张9</span></a></li>
+                                      <li class="rd_9"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张10</span></a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="li-css grid-0">
+                            <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>四级配置</div>
+                            <ul class="grid-1">
+                              <li>
+                                <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发中心</div>
+                                <ul class="grid-2">
+                                  <li>
+                                    <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发部</div>
+                                    <ul class="grid-3">
+                                      <li>
+                                        <div class="deploy"><a class="addCurall right">添加所有成员</a><i class="turn-right"></i>研发小组</div>
+                                        <ul class="grid-4 endCss">
+                                          <li class="rd_10"><a href="javascript:;" selectid="1"><i>添加</i><small>×</small><img src="images/1.png" alt=""/><span>张11</span></a></li>
+                                          <li class="rd_11"><a href="javascript:;" selectid="2"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张12</span></a></li>
+                                          <li class="rd_12"><a href="javascript:;" selectid="3"><i>添加</i><small>×</small><img src="images/2.png" alt=""/><span>张13</span></a></li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                <div class="btn-grop clearfix"> <a class="reveal-button right sure">提交</a> <a class="reveal-button close-reveal-modal right margin-r" aria-label="Close">取消</a> </div>
+            </div>
+        </div>
+       
+    </div>
+   	<div id="TB_overlayBG"></div>
+	
+    
+    <!--[if IE 6]>   
+    <script src="javascript/DD_belatedPNG_0.0.8a.js" type="text/javascript" ></script>   
+    <script type="text/javascript">     
+     DD_belatedPNG.fix('.Click-block');
+    </script> 
+    <![endif]--> 
+     <script src="javascript/peopleselect.js"></script>
+	 <script type="text/javascript">
+     	$.peopleselect("#peopleselect","#search1","#search2") //参数  页面点击模态窗口对象  
+		  $.peopleselect("#peopleselect1","#search3","#search4")
+     </script>
+</body>
+</html>
